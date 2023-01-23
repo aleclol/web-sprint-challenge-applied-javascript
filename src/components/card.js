@@ -71,18 +71,24 @@ const cardAppender = (selector) => {
       
       const articleArray = [bootstrapArticle, javascriptArticle, jqueryArticle, nodeArticle, technologyArticle]
 
+      const selectThis = document.querySelector(selector)
+      
+      console.log(selectThis)
+
       for(let category of articleArray){
         for(let theArticle of category){
-        const createCard = Card(category[theArticle])
-        const appendHere = document.appendChild(selector)
+        const createCard = Card(theArticle)
+        selectThis.appendChild(createCard)
         }
       }
-
+      return selectThis
     })
     .catch(err => {
       console.log(err)
     })  
 
 }
+
+console.log(cardAppender('.cards-container'))
 
 export { Card, cardAppender }
