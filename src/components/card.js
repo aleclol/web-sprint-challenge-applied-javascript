@@ -63,6 +63,14 @@ const cardAppender = (selector) => {
   axios.get('http://localhost:5001/api/articles')
     .then(response => {
       console.log(response.data.articles)
+      const bootstrapArticle = response.data.articles.bootstrap
+      const javascriptArticle = response.data.articles.javascript
+      const jqueryArticle = response.data.articles.jquery
+      const nodeArticle = response.data.articles.node
+      const technologyArticle = response.data.articles.technology
+      
+
+
     })
     .catch(err => {
       console.log(err)
