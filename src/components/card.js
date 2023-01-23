@@ -43,12 +43,12 @@ const Card = (article) => {
   imgContainer.appendChild(img)
   author.appendChild(authorName)
 
-  //console.log(card)
+  card.addEventListener('click', () => {
+    console.log(article.headline)
+  })
 
   return card
 }
-
-//console.log(Card({authorPhoto:'http://www.google.com',headline:"HI",authorName:"John"}))
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -62,7 +62,6 @@ const cardAppender = (selector) => {
 
   axios.get('http://localhost:5001/api/articles')
     .then(response => {
-      console.log(response.data.articles)
       const bootstrapArticle = response.data.articles.bootstrap
       const javascriptArticle = response.data.articles.javascript
       const jqueryArticle = response.data.articles.jquery
@@ -72,8 +71,6 @@ const cardAppender = (selector) => {
       const articleArray = [bootstrapArticle, javascriptArticle, jqueryArticle, nodeArticle, technologyArticle]
 
       const selectThis = document.querySelector(selector)
-      
-      console.log(selectThis)
 
       for(let category of articleArray){
         for(let theArticle of category){
@@ -88,7 +85,5 @@ const cardAppender = (selector) => {
     })  
 
 }
-
-console.log(cardAppender('.cards-container'))
 
 export { Card, cardAppender }

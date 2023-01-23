@@ -29,8 +29,6 @@ for(let topic of topics){
 return topicsElement
 }
 
-//console.log(Tabs(['one', 'two', 'three']))
-
 const tabsAppender = (selector) => {
   // TASK 4
   // ---------------------
@@ -42,7 +40,6 @@ const tabsAppender = (selector) => {
 
   axios.get('http://localhost:5001/api/topics')
     .then(response => {
-      //console.log(response);
       const tabList = Tabs(response.data.topics)
       const appendHere = document.querySelector(selector)
       appendHere.appendChild(tabList)

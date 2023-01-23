@@ -29,8 +29,6 @@ headerElement.appendChild(dateElement)
 headerElement.appendChild(titleElement)
 headerElement.appendChild(tempElement)
 
-//console.log(headerElement)
-
 return headerElement
 }
 
