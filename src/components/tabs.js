@@ -17,6 +17,7 @@ const Tabs = (topics) => {
   //
 
 const topicsElement = document.createElement('div')
+topicsElement.classList.add('topics')
 
 for(let topic of topics){
   const tabElement = document.createElement('div')
