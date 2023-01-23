@@ -69,7 +69,14 @@ const cardAppender = (selector) => {
       const nodeArticle = response.data.articles.node
       const technologyArticle = response.data.articles.technology
       
+      const articleArray = [bootstrapArticle, javascriptArticle, jqueryArticle, nodeArticle, technologyArticle]
 
+      for(let category of articleArray){
+        for(let theArticle of category){
+        const createCard = Card(category[theArticle])
+        const appendHere = document.appendChild(selector)
+        }
+      }
 
     })
     .catch(err => {
